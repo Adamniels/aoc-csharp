@@ -1,0 +1,12 @@
+# Build output
+bin/
+obj/
+
+# IDE
+.vs/
+.idea/
+*.user
+
+# Real puzzle inputs are not committed, per Advent of Code's request
+# not to republish puzzle inputs. Paste yours locally after cloning.
+src/Solutions/**/input.txt
