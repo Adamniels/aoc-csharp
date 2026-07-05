@@ -7,5 +7,7 @@ public static class Load
 {
     public static string Sample(int year, int day) => Inputs.Sample(year, day);
 
+    public static string Sample(int year, int day, string name) => Inputs.Sample(year, day, name);
+
     public static string Input(int year, int day) => Inputs.Real(year, day);
 }

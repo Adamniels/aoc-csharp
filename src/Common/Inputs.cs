@@ -12,6 +12,8 @@ public static class Inputs
 
     public static string Sample(int year, int day) => Read(year, day, "sample.txt");
 
+    public static string Sample(int year, int day, string name) => Read(year, day, name);
+
     public static string Real(int year, int day) => Read(year, day, "input.txt");
 
     public static string PathFor(int year, int day, string fileName) =>
