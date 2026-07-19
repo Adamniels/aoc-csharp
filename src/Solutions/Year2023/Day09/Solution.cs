@@ -53,6 +53,39 @@ public class Solution : ISolution
 
     public object Part2(string input)
     {
-        throw new NotImplementedException();
+        var result = 0;
+        var lines = InputParser.Lines(input);
+        foreach (var line in lines)
+        {
+            List<int> parsedLine = line.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToList();
+
+            result += solveLinePart2(parsedLine);
+        }
+        return result;
+    }
+
+    private static int solveLinePart2(List<int> parsedLine)
+    {
+        var firstNum = new List<int>();
+        firstNum.Add(parsedLine.First());
+        var nextRow = solveRow(parsedLine);
+        while (nextRow is not null)
+        {
+            firstNum.Add(nextRow.First());
+            nextRow = solveRow(nextRow);
+        }
+        return solveWithFirstNumbers(firstNum);
+    }
+
+    private static int solveWithFirstNumbers(List<int> allFirst)
+    {
+        var currentRes = allFirst.Last();
+        for (int i = allFirst.Count - 2; i >= 0; i--)
+        {
+            currentRes = allFirst.ElementAt(i) - currentRes;
+        }
+        return currentRes;
     }
 }

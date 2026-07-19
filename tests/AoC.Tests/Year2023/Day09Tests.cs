@@ -13,9 +13,9 @@ public class Day09Tests
     public void Part1_Sample() =>
         Assert.Equal("114", _solution.Part1(Load.Sample(2023, 9)).ToString());
 
-    [Fact(Skip = "Fill in confirmed real answer, then remove Skip")]
+    [Fact]
     public void Part2_Sample() =>
-        Assert.Equal("EXPECTED", _solution.Part2(Load.Sample(2023, 9)).ToString());
+        Assert.Equal("2", _solution.Part2(Load.Sample(2023, 9)).ToString());
 
     [Fact(Skip = "Fill in confirmed real answer, then remove Skip")]
     public void Part1_Real() =>
